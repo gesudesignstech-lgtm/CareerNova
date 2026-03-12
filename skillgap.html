@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Skill Gap Analyzer - CareerNova</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+select,input,button{
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#4cc9f0;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+#result{
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:10px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Skill Gap Analyzer</h1>
+
+<p>Enter the skills you already know and select a career</p>
+
+<input id="myskills" placeholder="Example: Python, HTML, Cooking">
+
+<br>
+
+<select id="career">
+
+<option value="">Select Career</option>
+<option value="software">Software Engineer</option>
+<option value="datascience">Data Scientist</option>
+<option value="chef">Culinary Artist</option>
+<option value="journalist">Journalist</option>
+<option value="designer">Graphic Designer</option>
+
+</select>
+
+<br>
+
+<button onclick="analyzeSkills()">Analyze Skills</button>
+
+<div id="result"></div>
+
+<script>
+
+function analyzeSkills(){
+
+let userSkills=document.getElementById("myskills").value.toLowerCase().split(",")
+let career=document.getElementById("career").value
+
+let requiredSkills=[]
+
+if(career==="software"){
+requiredSkills=["html","css","javascript","programming","data structures"]
+}
+
+else if(career==="datascience"){
+requiredSkills=["python","statistics","machine learning","data analysis"]
+}
+
+else if(career==="chef"){
+requiredSkills=["cooking","food presentation","kitchen management"]
+}
+
+else if(career==="journalist"){
+requiredSkills=["writing","communication","research"]
+}
+
+else if(career==="designer"){
+requiredSkills=["photoshop","creativity","ui design"]
+}
+
+let gap=[]
+
+for(let i=0;i<requiredSkills.length;i++){
+
+if(!userSkills.includes(requiredSkills[i])){
+gap.push(requiredSkills[i])
+}
+
+}
+
+let result=document.getElementById("result")
+
+result.innerHTML=
+
+"<h2>Required Skills</h2>"+requiredSkills.join(", ") +
+
+"<h2>Your Skill Gap</h2>"+gap.join(", ")
+
+}
+
+</script>
+
+<br><br>
+
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+</body>
+
+</html>

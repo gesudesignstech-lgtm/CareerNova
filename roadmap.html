@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Career Roadmap - CareerNova</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+select,button{
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#4cc9f0;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+#roadmap{
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:10px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Personalized Career Roadmap</h1>
+
+<p>Select your career to see the roadmap</p>
+
+<select id="career">
+
+<option value="">Choose Career</option>
+<option value="software">Software Engineer</option>
+<option value="doctor">Doctor</option>
+<option value="designer">Graphic Designer</option>
+<option value="chef">Culinary Artist</option>
+<option value="journalist">Journalist</option>
+<option value="datascientist">Data Scientist</option>
+<option value="ai">AI Engineer</option>
+<option value="cyber">Cyber Security Expert</option>
+<option value="architect">Architect</option>
+<option value="lawyer">Lawyer</option>
+<option value="psychologist">Psychologist</option>
+<option value="gamedesigner">Game Developer</option>
+<option value="marketer">Digital Marketer</option>
+<option value="robotics">Robotics Engineer</option>
+
+</select>
+
+<br>
+
+<button onclick="generateRoadmap()">Generate Roadmap</button>
+
+<div id="roadmap"></div>
+
+<script>
+
+function generateRoadmap(){
+
+let career=document.getElementById("career").value
+let roadmap=document.getElementById("roadmap")
+
+if(career==="software"){
+
+roadmap.innerHTML=
+"<h2>Software Engineer Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech Computer Science, AI Engineering"+
+"<h3>Exams</h3>JEE, MHT CET"+
+"<h3>Skills</h3>Programming, Web Development, Data Structures"
+
+}
+
+else if(career==="doctor"){
+
+roadmap.innerHTML=
+"<h2>Doctor Roadmap</h2>"+
+"<h3>Courses</h3>MBBS"+
+"<h3>Exams</h3>NEET"+
+"<h3>Skills</h3>Biology, Patient Care, Diagnosis"
+
+}
+
+else if(career==="designer"){
+
+roadmap.innerHTML=
+"<h2>Graphic Designer Roadmap</h2>"+
+"<h3>Courses</h3>B.Des, Animation"+
+"<h3>Exams</h3>NID Entrance"+
+"<h3>Skills</h3>Photoshop, UI Design, Creativity"
+
+}
+
+else if(career==="chef"){
+
+roadmap.innerHTML=
+"<h2>Culinary Artist Roadmap</h2>"+
+"<h3>Courses</h3>Hotel Management, Culinary Arts"+
+"<h3>Exams</h3>NCHMCT Entrance"+
+"<h3>Skills</h3>Cooking, Food Presentation"
+
+}
+
+else if(career==="journalist"){
+
+roadmap.innerHTML=
+"<h2>Journalist Roadmap</h2>"+
+"<h3>Courses</h3>BA Journalism, Mass Communication"+
+"<h3>Exams</h3>IIMC Entrance"+
+"<h3>Skills</h3>Writing, Communication, Research"
+
+}
+
+else if(career==="datascientist"){
+
+roadmap.innerHTML=
+"<h2>Data Scientist Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech Data Science, Statistics"+
+"<h3>Exams</h3>JEE, MHT CET"+
+"<h3>Skills</h3>Python, Machine Learning, Data Analysis"
+
+}
+
+else if(career==="ai"){
+
+roadmap.innerHTML=
+"<h2>AI Engineer Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech AI / Machine Learning"+
+"<h3>Exams</h3>JEE"+
+"<h3>Skills</h3>Python, Neural Networks, Deep Learning"
+
+}
+
+else if(career==="cyber"){
+
+roadmap.innerHTML=
+"<h2>Cyber Security Expert Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech Cyber Security"+
+"<h3>Exams</h3>JEE, CET"+
+"<h3>Skills</h3>Networking, Ethical Hacking"
+
+}
+
+else if(career==="architect"){
+
+roadmap.innerHTML=
+"<h2>Architect Roadmap</h2>"+
+"<h3>Courses</h3>B.Arch"+
+"<h3>Exams</h3>NATA"+
+"<h3>Skills</h3>Design, AutoCAD"
+
+}
+
+else if(career==="lawyer"){
+
+roadmap.innerHTML=
+"<h2>Lawyer Roadmap</h2>"+
+"<h3>Courses</h3>LLB"+
+"<h3>Exams</h3>CLAT"+
+"<h3>Skills</h3>Legal Knowledge, Communication"
+
+}
+
+else if(career==="psychologist"){
+
+roadmap.innerHTML=
+"<h2>Psychologist Roadmap</h2>"+
+"<h3>Courses</h3>BA Psychology"+
+"<h3>Exams</h3>University Entrance"+
+"<h3>Skills</h3>Empathy, Research"
+
+}
+
+else if(career==="gamedesigner"){
+
+roadmap.innerHTML=
+"<h2>Game Developer Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech Game Development"+
+"<h3>Skills</h3>C++, Unity, Game Design"
+
+}
+
+else if(career==="marketer"){
+
+roadmap.innerHTML=
+"<h2>Digital Marketer Roadmap</h2>"+
+"<h3>Courses</h3>BBA Marketing"+
+"<h3>Skills</h3>SEO, Social Media Marketing"
+
+}
+
+else if(career==="robotics"){
+
+roadmap.innerHTML=
+"<h2>Robotics Engineer Roadmap</h2>"+
+"<h3>Courses</h3>B.Tech Robotics"+
+"<h3>Exams</h3>JEE"+
+"<h3>Skills</h3>Automation, Electronics"
+
+}
+
+else{
+
+roadmap.innerHTML="Please select a career"
+
+}
+
+}
+
+</script>
+
+<br><br>
+
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+</body>
+
+</html>

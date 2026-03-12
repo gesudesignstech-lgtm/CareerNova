@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Connect with Mentors - CareerNova</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+select,input,button{
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#4cc9f0;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+#confirmation{
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:10px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Connect with Career Mentors</h1>
+
+<p>Select a mentor and book a guidance session</p>
+
+<select id="mentor">
+
+<option value="">Choose Mentor</option>
+<option value="ananya">Ananya - Software Engineer</option>
+<option value="rahul">Rahul - Marketing Specialist</option>
+<option value="nexa">Nexa - Doctor</option>
+<option value="chef">Aarav - Culinary Expert</option>
+<option value="journalist">Meera - Journalist</option>
+
+</select>
+
+<br>
+
+<input type="date" id="date">
+
+<br>
+
+<button onclick="bookSession()">Book Session</button>
+
+<div id="confirmation"></div>
+
+<script>
+
+function bookSession(){
+
+let mentor=document.getElementById("mentor").value
+let date=document.getElementById("date").value
+let message=document.getElementById("confirmation")
+
+if(mentor==="" || date===""){
+
+message.innerHTML="Please select mentor and date"
+
+}
+
+else{
+
+let mentorName=""
+
+if(mentor==="ananya"){
+mentorName="Ananya - Software Engineer"
+}
+
+else if(mentor==="rahul"){
+mentorName="Rahul - Marketing Specialist"
+}
+
+else if(mentor==="nexa"){
+mentorName="Nexa - Doctor"
+}
+
+else if(mentor==="chef"){
+mentorName="Aarav - Culinary Expert"
+}
+
+else if(mentor==="journalist"){
+mentorName="Meera - Journalist"
+}
+
+message.innerHTML=
+
+"<h2>Session Booked Successfully 🎉</h2>"+
+"<p>Mentor: "+mentorName+"</p>"+
+"<p>Date: "+date+"</p>"+
+"<p>The mentor will contact you soon.</p>"
+
+}
+
+}
+
+</script>
+
+<br><br>
+
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+</body>
+
+</html>
+

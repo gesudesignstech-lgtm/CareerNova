@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Find Best Colleges - CareerNova</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+select,button{
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:none;
+}
+
+button{
+background:#4cc9f0;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+#collegeInfo{
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:10px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Find the Best Colleges</h1>
+
+<p>Explore top colleges, cutoffs, fees and placement statistics</p>
+
+<select id="college">
+
+<option value="">Choose College</option>
+<option value="iitbombay">IIT Bombay</option>
+<option value="iitdelhi">IIT Delhi</option>
+<option value="bits">BITS Pilani</option>
+<option value="spit">SPIT Mumbai</option>
+<option value="vit">VIT Vellore</option>
+<option value="nmims">NMIMS Mumbai</option>
+<option value="thakur">Thakur College of Engineering and Technology</option>
+<option value="vidyalankar">Vidyalankar Institute of Technology</option>
+<option value="xaviers">St Xavier's College Mumbai</option>
+
+</select>
+
+<br>
+
+<button onclick="showCollege()">Explore College</button>
+
+<div id="collegeInfo"></div>
+
+<script>
+
+function showCollege(){
+
+let college=document.getElementById("college").value
+let info=document.getElementById("collegeInfo")
+
+if(college==="iitbombay"){
+
+info.innerHTML=
+"<h2>IIT Bombay</h2>"+
+"<h3>Cutoff</h3>JEE Advanced Rank ~ Top 1000"+
+"<h3>Fees</h3>Approx ₹2.2 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹20 LPA"
+
+}
+
+else if(college==="iitdelhi"){
+
+info.innerHTML=
+"<h2>IIT Delhi</h2>"+
+"<h3>Cutoff</h3>JEE Advanced Rank ~ Top 1200"+
+"<h3>Fees</h3>Approx ₹2.1 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹19 LPA"
+
+}
+
+else if(college==="bits"){
+
+info.innerHTML=
+"<h2>BITS Pilani</h2>"+
+"<h3>Cutoff</h3>BITSAT Score ~ 320+"+
+"<h3>Fees</h3>Approx ₹5 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹18 LPA"
+
+}
+
+else if(college==="spit"){
+
+info.innerHTML=
+"<h2>SPIT Mumbai</h2>"+
+"<h3>Cutoff</h3>MHT CET ~ 99+ percentile"+
+"<h3>Fees</h3>Approx ₹1.8 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹9-10 LPA"
+
+}
+
+else if(college==="vit"){
+
+info.innerHTML=
+"<h2>VIT Vellore</h2>"+
+"<h3>Cutoff</h3>VITEEE Rank ~ Top 10,000"+
+"<h3>Fees</h3>Approx ₹2-4 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹8 LPA"
+
+}
+
+else if(college==="nmims"){
+
+info.innerHTML=
+"<h2>NMIMS Mumbai</h2>"+
+"<h3>Cutoff</h3>NMIMS CET"+
+"<h3>Fees</h3>Approx ₹3.5 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹7-8 LPA"
+
+}
+
+else if(college==="thakur"){
+
+info.innerHTML=
+"<h2>Thakur College of Engineering and Technology</h2>"+
+"<h3>Cutoff</h3>MHT CET ~ 95-97 percentile"+
+"<h3>Fees</h3>Approx ₹1.6 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹6-7 LPA"
+
+}
+
+else if(college==="vidyalankar"){
+
+info.innerHTML=
+"<h2>Vidyalankar Institute of Technology</h2>"+
+"<h3>Cutoff</h3>MHT CET ~ 93-96 percentile"+
+"<h3>Fees</h3>Approx ₹1.7 Lakhs per year"+
+"<h3>Placement Stats</h3>Average Package ₹5-6 LPA"
+
+}
+
+else if(college==="xaviers"){
+
+info.innerHTML=
+"<h2>St Xavier's College Mumbai</h2>"+
+"<h3>Cutoff</h3>Merit Based Admission"+
+"<h3>Fees</h3>Approx ₹25k - ₹60k per year"+
+"<h3>Placement Stats</h3>Average Package ₹4-5 LPA"
+
+}
+
+else{
+
+info.innerHTML="Please select a college"
+
+}
+
+}
+
+</script>
+
+<br><br>
+
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Career Quiz - CareerNova</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+color:white;
+padding:40px;
+}
+
+.quiz-box{
+max-width:750px;
+margin:auto;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:10px;
+}
+
+h1{
+text-align:center;
+}
+
+.question{
+margin-top:20px;
+}
+
+button{
+margin:30px auto;
+padding:12px 25px;
+background:#4cc9f0;
+border:none;
+border-radius:5px;
+color:white;
+cursor:pointer;
+font-size:16px;
+}
+.button-container {
+    text-align: center;
+    margin-top: 30px; /* Adds space between the quiz and the button */
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+#result{
+margin-top:30px;
+font-size:18px;
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:10px;
+}
+{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+flex-wrap:wrap
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:white;
+font-size:15px;
+}
+
+nav a:hover{
+color:#ffb347;
+}
+
+
+</style>
+
+</head><header>
+
+<div class="logo"></div>
+
+<h1 class="logo-text">CareerNova</h1>
+
+</div>
+
+<nav>
+<a href="careers.html">Explore Careers</a>
+<a href="colleges.html">College Finder</a>
+<a href="mentor.html">Mentor Connect</a>
+<a href="login.html">Login</a>
+</nav>
+
+</header>
+
+<body>
+
+<div class="quiz-box">
+
+<h1>🚀 Career Discovery Quiz</h1>
+
+<div class="question">
+<p>1. Which subject do you enjoy most?</p>
+<input type="radio" name="q1" value="tech"> Computer Science<br>
+<input type="radio" name="q1" value="medical"> Biology<br>
+<input type="radio" name="q1" value="design"> Art / Creativity<br>
+<input type="radio" name="q1" value="law"> Political Science<br>
+</div>
+
+<div class="question">
+<p>2. What kind of work excites you?</p>
+<input type="radio" name="q2" value="tech"> Building apps or software<br>
+<input type="radio" name="q2" value="medical"> Helping patients<br>
+<input type="radio" name="q2" value="media"> Reporting news<br>
+<input type="radio" name="q2" value="business"> Starting a company<br>
+</div>
+
+<div class="question">
+<p>3. Which environment do you prefer?</p>
+<input type="radio" name="q3" value="tech"> Tech office<br>
+<input type="radio" name="q3" value="medical"> Hospital<br>
+<input type="radio" name="q3" value="engineering"> Construction site<br>
+<input type="radio" name="q3" value="kitchen"> Restaurant kitchen<br>
+</div>
+
+<div class="question">
+<p>4. Which skill describes you best?</p>
+<input type="radio" name="q4" value="tech"> Logical thinking<br>
+<input type="radio" name="q4" value="design"> Creativity<br>
+<input type="radio" name="q4" value="law"> Debating<br>
+<input type="radio" name="q4" value="medical"> Empathy<br>
+</div>
+
+<div class="question">
+<p>5. What do you like doing in free time?</p>
+<input type="radio" name="q5" value="tech"> Coding / gaming<br>
+<input type="radio" name="q5" value="media"> Writing stories<br>
+<input type="radio" name="q5" value="design"> Drawing / editing<br>
+<input type="radio" name="q5" value="kitchen"> Cooking<br>
+</div>
+
+<div class="question">
+<p>6. Which problem would you like to solve?</p>
+<input type="radio" name="q6" value="tech"> Create better technology<br>
+<input type="radio" name="q6" value="medical"> Cure diseases<br>
+<input type="radio" name="q6" value="engineering"> Build cities<br>
+<input type="radio" name="q6" value="business"> Create jobs<br>
+</div>
+
+<div class="question">
+<p>7. Which personality trait fits you?</p>
+<input type="radio" name="q7" value="tech"> Analytical<br>
+<input type="radio" name="q7" value="design"> Imaginative<br>
+<input type="radio" name="q7" value="law"> Confident speaker<br>
+<input type="radio" name="q7" value="psychology"> Good listener<br>
+</div>
+
+<div class="question">
+<p>8. What motivates you most?</p>
+<input type="radio" name="q8" value="tech"> Innovation<br>
+<input type="radio" name="q8" value="medical"> Saving lives<br>
+<input type="radio" name="q8" value="media"> Telling stories<br>
+<input type="radio" name="q8" value="business"> Building companies<br>
+</div>
+
+<div class="question">
+<p>9. Which tool would you enjoy using?</p>
+<input type="radio" name="q9" value="tech"> Laptop & code editor<br>
+<input type="radio" name="q9" value="design"> Photoshop / Illustrator<br>
+<input type="radio" name="q9" value="engineering"> Engineering tools<br>
+<input type="radio" name="q9" value="kitchen"> Cooking equipment<br>
+</div>
+
+<div class="question">
+<p>10. What impact do you want to make?</p>
+<input type="radio" name="q10" value="tech"> Advance technology<br>
+<input type="radio" name="q10" value="medical"> Improve health<br>
+<input type="radio" name="q10" value="media"> Inform society<br>
+<input type="radio" name="q10" value="psychology"> Help mental health<br>
+</div>
+
+<button onclick="calculateCareer()">Discover My Career 🚀</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateCareer(){
+
+let answers=document.querySelectorAll("input[type=radio]:checked")
+
+if(answers.length<10){
+document.getElementById("result").innerHTML="⚠️ Please answer all questions."
+return
+}
+
+let scores={
+tech:0,
+medical:0,
+design:0,
+law:0,
+engineering:0,
+media:0,
+kitchen:0,
+business:0,
+psychology:0
+}
+
+answers.forEach(ans=>{
+scores[ans.value]++
+})
+
+let sortedCareers=Object.entries(scores).sort((a,b)=>b[1]-a[1])
+
+let careerNames={
+tech:"💻 Software Engineer / Data Scientist",
+medical:"🩺 Doctor",
+design:"🎨 Graphic Designer",
+law:"⚖️ Lawyer",
+engineering:"🏗️ Civil Engineer",
+media:"📰 Journalist",
+kitchen:"👨‍🍳 Chef",
+business:"🚀 Entrepreneur",
+psychology:"🧠 Psychologist"
+}
+
+let resultHTML="<h2>🌟 Your Top Career Matches</h2>"
+
+for(let i=0;i<3;i++){
+resultHTML+="<p>"+(i+1)+". "+careerNames[sortedCareers[i][0]]+" ("+(sortedCareers[i][1]*10)+"% match)</p>"
+}
+
+resultHTML+="<br>✨ Explore courses and colleges for these careers on CareerNova!"
+
+document.getElementById("result").innerHTML=resultHTML
+
+}
+
+</script>
+<a href="index.html">
+<div class="button-container">
+    <button>Back to Home</button>
+</div></a>  
+</body>
+
+</html>

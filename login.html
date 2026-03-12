@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>CareerNova Login</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:linear-gradient(#020024,#090979,#000000);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.container{
+background:rgba(255,255,255,0.1);
+padding:40px;
+border-radius:10px;
+text-align:center;
+width:320px;
+backdrop-filter:blur(10px);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:10px 20px;
+margin-top:10px;
+border:none;
+background:#4cc9f0;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3aa8cc;
+}
+
+.switch{
+margin-top:15px;
+font-size:14px;
+cursor:pointer;
+color:#4cc9f0;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 id="formTitle">Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="submitForm()">Submit</button>
+
+<p class="switch" onclick="toggleForm()">Don't have an account? Sign Up</p>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+let isLogin=true
+
+function toggleForm(){
+
+isLogin=!isLogin
+
+if(isLogin){
+
+document.getElementById("formTitle").innerText="Login"
+document.querySelector(".switch").innerText="Don't have an account? Sign Up"
+
+}
+
+else{
+
+document.getElementById("formTitle").innerText="Sign Up"
+document.querySelector(".switch").innerText="Already have an account? Login"
+
+}
+
+}
+
+function submitForm(){
+
+let user=document.getElementById("username").value
+let pass=document.getElementById("password").value
+
+if(isLogin){
+
+let savedUser=localStorage.getItem("username")
+let savedPass=localStorage.getItem("password")
+
+if(user===savedUser && pass===savedPass){
+
+document.getElementById("message").innerHTML="Login Successful"
+
+window.location.href="index.html"
+
+}
+
+else{
+
+document.getElementById("message").innerHTML="Invalid credentials"
+
+}
+
+}
+
+else{
+
+localStorage.setItem("username",user)
+localStorage.setItem("password",pass)
+
+document.getElementById("message").innerHTML="Account created! Now login."
+
+toggleForm()
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

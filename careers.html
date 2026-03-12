@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Career Explorer</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* Career cards layout */
+
+body{
+font-family: Arial, sans-serif;
+background:
+radial-gradient(2px 2px at 20% 30%, white, transparent),
+radial-gradient(2px 2px at 40% 70%, white, transparent),
+radial-gradient(1.5px 1.5px at 60% 40%, white, transparent),
+radial-gradient(2px 2px at 80% 60%, white, transparent),
+radial-gradient(1px 1px at 10% 80%, white, transparent),
+radial-gradient(1.5px 1.5px at 90% 20%, white, transparent),
+linear-gradient(120deg,#07072c,lch(15.45% 78.61 305.03),#000000);
+color:white;
+text-align:center;
+}
+
+.career-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:75px;
+padding:100px;
+}
+
+.career-card{
+background:#193f7b;
+padding:20px;
+border-radius:10px;
+}
+
+button{
+margin-top:10px;
+padding:8px 15px;
+border:none;
+background:#3fd1c2;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* Modal */
+
+.modal{
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:#1e293b;
+width:40%;
+margin:10% auto;
+padding:20px;
+border-radius:10px;
+}
+
+.close{
+float:right;
+font-size:25px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<h1>Explore Careers</h1>
+
+<div class="career-container">
+
+<div class="career-card">
+<h3>Software Engineer</h3>
+<button onclick="learnMore('software')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Doctor</h3>
+<button onclick="learnMore('doctor')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Data Scientist</h3>
+<button onclick="learnMore('datascientist')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Graphic Designer</h3>
+<button onclick="learnMore('graphic')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Chef</h3>
+<button onclick="learnMore('chef')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Journalist</h3>
+<button onclick="learnMore('journalist')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>AI Engineer</h3>
+<button onclick="learnMore('ai')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Cyber Security Expert</h3>
+<button onclick="learnMore('cyber')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Architect</h3>
+<button onclick="learnMore('architect')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Entrepreneur</h3>
+<button onclick="learnMore('entrepreneur')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Game Developer</h3>
+<button onclick="learnMore('game')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Psychologist</h3>
+<button onclick="learnMore('psychologist')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Digital Marketer</h3>
+<button onclick="learnMore('marketing')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Lawyer</h3>
+<button onclick="learnMore('lawyer')">Learn More</button>
+</div>
+
+<div class="career-card">
+<h3>Robotics Engineer</h3>
+<button onclick="learnMore('robotics')">Learn More</button>
+</div>
+
+</div>
+
+
+<!-- Modal Popup -->
+
+<div id="careerModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="careerTitle"></h2>
+
+<p id="careerInfo"></p>
+
+</div>
+
+</div>
+
+
+<script>
+
+const careerData = {
+
+software:{
+title:"Software Engineer",
+info:"Software engineers design websites, apps and systems using programming languages like Java, Python and C++."
+},
+
+doctor:{
+title:"Doctor",
+info:"Doctors diagnose diseases, treat patients and help people maintain good health."
+},
+
+datascientist:{
+title:"Data Scientist",
+info:"Data scientists analyse data using machine learning and statistics to help companies make decisions."
+},
+
+graphic:{
+title:"Graphic Designer",
+info:"Graphic designers create visual content like logos, advertisements and digital graphics."
+},
+
+chef:{
+title:"Chef",
+info:"Chefs prepare food in restaurants and design creative dishes."
+},
+
+journalist:{
+title:"Journalist",
+info:"Journalists gather information and report news through newspapers, TV and digital media."
+},
+
+ai:{
+title:"AI Engineer",
+info:"AI engineers build intelligent systems using machine learning and artificial intelligence."
+},
+
+cyber:{
+title:"Cyber Security Expert",
+info:"Cyber security experts protect computer systems and networks from hacking and cyber attacks."
+},
+
+architect:{
+title:"Architect",
+info:"Architects design buildings and infrastructure while ensuring safety and functionality."
+},
+
+entrepreneur:{
+title:"Entrepreneur",
+info:"Entrepreneurs start businesses and develop innovative ideas."
+},
+
+game:{
+title:"Game Developer",
+info:"Game developers create video games using programming and game engines."
+},
+
+psychologist:{
+title:"Psychologist",
+info:"Psychologists study human behaviour and help people with mental health issues."
+},
+
+marketing:{
+title:"Digital Marketer",
+info:"Digital marketers promote products online using social media and search engines."
+},
+
+lawyer:{
+title:"Lawyer",
+info:"Lawyers provide legal advice and represent clients in court."
+},
+
+robotics:{
+title:"Robotics Engineer",
+info:"Robotics engineers design and build robots used in industries and research."
+}
+
+};
+
+
+function learnMore(career){
+
+document.getElementById("careerTitle").innerText=careerData[career].title;
+
+document.getElementById("careerInfo").innerText=careerData[career].info;
+
+document.getElementById("careerModal").style.display="block";
+
+}
+
+
+function closeModal(){
+
+document.getElementById("careerModal").style.display="none";
+
+}
+
+</script>
+<a href="index.html">
+<button>Back to Home</button>
+</a>
+
+
+</body>
+</html>
